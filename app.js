@@ -8,9 +8,9 @@ Madrid - Octubre 2020 */
 //Iteration 1 | The rover object
 
 const rover = { 
+    direction: 'N',
     x: 0,
     y: 0,
-    direction: 'N',
     travelLog: [{ x: 0, y: 0}],
 }
 
@@ -18,7 +18,7 @@ const rover = {
 
 //Iteration 2 | Turning the rover
 
-function turnLeft(rover){
+function turnLeft (rover){
     switch (rover.direction) {
 
         case 'N':
@@ -38,13 +38,13 @@ function turnLeft(rover){
             break;   
     }
 
-    console.log(`Turns Left! Rover has the direction: ${rover.direction}.`) 
+    console.log(`Turns Left! Rover has the direction ${rover.direction}.`) 
 
 }
 
 
-function turnRight(rover){
-    switch (direction) {
+function turnRight (rover){
+    switch (rover.direction) {
 
         case 'N':
             rover.direction = 'E'
@@ -63,7 +63,7 @@ function turnRight(rover){
             break
     }
 
-    console.log(`Turns Right! Rover has the direction: ${rover.direction}.`)   
+    console.log(`Turns Right! Rover has the direction ${rover.direction}.`)   
 
 }
 
@@ -109,7 +109,7 @@ function goForward(rover, command){
 
 
 
-//Bonus 2 | Move backwards 
+    //Bonus 2 | Move backwards 
 
 function goBackward(rover, command){
     if(rover.x >= 0 && rover.x < 10){
@@ -155,7 +155,7 @@ function commands (command) {
  for (let i = 0; i < command.length; i++) {
     let orders = command[i]
 
-    switch (direction) {
+    switch (orders) {
         case 'f':
             goForward(rover, command);
             break
@@ -173,7 +173,7 @@ function commands (command) {
             break
 
 
-        //Bonus 3 | Validate inputs 
+    //Bonus 3 | Validate inputs 
 
         default:
             console.log('Wrong command: You must enter: f, r, l or b')
@@ -181,10 +181,8 @@ function commands (command) {
     }  
 
 }   
-console.log(rover.travelLog);
+    console.log(rover.travelLog);
 }
-
-
 
 //Iteration 5 | Tracking 
 
