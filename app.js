@@ -16,6 +16,31 @@ const rover = {
 
 
 
+//Bonus 4 | Obstacles 
+
+const rover2 = {
+    direction: 'N',
+    x: 9,
+    y: 9,
+    travelLog: [{ x: 0, y: 0}],
+}
+
+const coord = [
+ [null, null, null, null, null, null, null, null, null, null],
+ [null, null, null, null, null, null, null, null, null, null], 
+ [null, null, null, null, null, null, null, null, null, null], 
+ [null, null, null, null, null, null, null, null, null, null], 
+ [null, null, null, null, null, null, null, null, null, null], 
+ [null, null, null, null, null, null, null, null, null, null], 
+ [null, null, null, null, null, null, null, null, null, null], 
+ [null, null, null, null, null, null, null, null, null, null], 
+ [null, null, null, null, null, null, null, null, null, null], 
+ [null, null, null, null, null, null, null, null, null, null],  
+]
+
+
+
+
 //Iteration 2 | Turning the rover
 
 function turnLeft (rover){
@@ -108,7 +133,7 @@ function goForward(rover, command){
 
 
 
-
+/*
     //Bonus 2 | Move backwards 
 
 function goBackward(rover, command){
@@ -146,7 +171,7 @@ function goBackward(rover, command){
         console.log('The rover has gone OUT from the board!!!')
     }
 }
-
+*/
 
 
 //Iteration 4 | Commands
@@ -190,4 +215,3 @@ commands('rffrfflfrff')
 
 //////////////////////////////////////////////
 
-//Bonus 4 | Obstacles 
