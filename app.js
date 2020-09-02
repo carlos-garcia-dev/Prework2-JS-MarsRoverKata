@@ -16,7 +16,7 @@ const rover = {
 
 
 
-//Bonus 4 | Obstacles 
+    //Bonus 4 | Obstacles 
 
 const rover2 = {
     direction: 'N',
@@ -130,22 +130,19 @@ function goForward(rover, command){
         }
 
 
+    //Bonus 1 | Enforce boundaries
+        
         if (rover.x < 0 || rover.x >= 10) {
-
             console.log('The rover has gone OUT from the board!!!') 
 
         } else if (rover.y < 0 || rover.y >= 10) {
-
             console.log('The rover has gone OUT from the board!!!')
 
         } else if (rover2.x < 0 || rover2.x >= 10) {
-
             console.log('The rover2 has gone OUT from the board!!!')
 
         } else if (rover2.y < 0 || rover2.y >= 10) {
-
             console.log('The rover2 has gone OUT from the board!!!') 
-
         }
 
         let newPosition = { x: rover.x, y: 
@@ -155,7 +152,7 @@ function goForward(rover, command){
         
         console.log(`Rover has this new position: ${rover.travelLog.push(newPosition)}`)
 
-        console.log(`Rover 2 has this new position: ${rover2.travelLog.push(newPosition2)}`)
+        console.log(`Rover2 has this new position: ${rover2.travelLog.push(newPosition2)}`)
 
     }
 }
@@ -195,35 +192,30 @@ function goBackward(rover, command){
         }
 
 
-        if (rover.x < 0 || rover.x >= 10) {
 
+    //Bonus 1 | Enforce boundaries
+
+        if (rover.x < 0 || rover.x >= 10) {
             console.log('The rover has gone OUT from the board!!!') 
 
         } else if (rover.y < 0 || rover.y >= 10) {
-
             console.log('The rover has gone OUT from the board!!!')
 
         } else if (rover2.x < 0 || rover2.x >= 10) {
-
             console.log('The rover2 has gone OUT from the board!!!')
 
         } else if (rover2.y < 0 || rover2.y >= 10) {
-
             console.log('The rover2 has gone OUT from the board!!!') 
             
         }
 
 
-        let newPosition = { x: rover.x, y: 
-        rover.y}
+        let newPosition = { x: rover.x, y: rover.y}
 
         let newPosition2 = { x: rover2.x, y: rover2.y}
         
         console.log(`Rover has this new position: ${rover.travelLog.push(newPosition)}`)
-
         console.log(`Rover 2 has this new position: ${rover2.travelLog.push(newPosition2)}`)
-
-    
     }
 }
 
