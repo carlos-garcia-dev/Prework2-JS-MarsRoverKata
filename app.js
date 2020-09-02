@@ -20,9 +20,9 @@ const rover = {
 
 const rover2 = {
     direction: 'N',
-    x: 9,
-    y: 9,
-    travelLog: [{ x: 0, y: 0}],
+    x: 5,
+    y: 5,
+    travelLog: [{ x: 5, y: 5}],
 }
 
 const coord = [
@@ -63,7 +63,9 @@ function turnLeft (rover){
             break;   
     }
 
-    console.log(`Turns Left! Rover has the direction ${rover.direction}.`) 
+    console.log(`Turns Left! Rover has the direction ${rover.direction}.`)
+
+    console.log(`Turns Left! Rover2 has the direction ${rover2.direction}.`) 
 
 }
 
@@ -88,7 +90,9 @@ function turnRight (rover){
             break
     }
 
-    console.log(`Turns Right! Rover has the direction ${rover.direction}.`)   
+    console.log(`Turns Right! Rover has the direction ${rover.direction}.`)
+
+    console.log(`Turns Right! Rover2 has the direction ${rover2.direction}.`)   
 
 }
 
@@ -97,81 +101,132 @@ function turnRight (rover){
 
 function goForward(rover, command){
     if(rover.x >= 0 && rover.x < 10){
-        
+    
+        switch (rover.direction || rover2.direction) {
 
-        if (rover.direction === 'N'){
-            console.log('NORTH')
-            rover.y--
+            case 'N':
+                console.log('NORTH')
+                rover.y--
+                rover2.y--
+                break;
 
-        } else if (rover.direction === 'E') {
-            console.log('EAST')
-            rover.x++
+            case 'E':
+                console.log('EAST')
+                rover.x++
+                rover2.x++
+                break;
 
-        } else if (rover.direction === 'S') {
-            console.log('SOUTH')
-            rover.y++
+            case 'S':
+                console.log('SOUTH')
+                rover.y++
+                rover2.y++
+                break;
 
-        } else if (rover.direction === 'W') {
-            console.log('WEST')
-            rover.x--
-
+            case 'W':
+                console.log('WEST')
+                rover.x--
+                rover2.x--
+                break;
         }
 
 
+        if (rover.x < 0 || rover.x >= 10) {
+
+            console.log('The rover has gone OUT from the board!!!') 
+
+        } else if (rover.y < 0 || rover.y >= 10) {
+
+            console.log('The rover has gone OUT from the board!!!')
+
+        } else if (rover2.x < 0 || rover2.x >= 10) {
+
+            console.log('The rover2 has gone OUT from the board!!!')
+
+        } else if (rover2.y < 0 || rover2.y >= 10) {
+
+            console.log('The rover2 has gone OUT from the board!!!') 
+
+        }
+
         let newPosition = { x: rover.x, y: 
         rover.y}
+
+        let newPosition2 = { x: rover2.x, y: rover2.y}
         
         console.log(`Rover has this new position: ${rover.travelLog.push(newPosition)}`)
 
+        console.log(`Rover 2 has this new position: ${rover2.travelLog.push(newPosition2)}`)
 
-    //Bonus 1 | Enforce boundaries 
-
-    } else {
-        console.log('The rover has gone OUT from the board!!!')
     }
 }
 
 
 
-/*
     //Bonus 2 | Move backwards 
 
 function goBackward(rover, command){
-    if(rover.x >= 0 && rover.x < 10){
-        
+     if(rover.x >= 0 && rover.x < 10){
+    
+        switch (rover.direction || rover2.direction) {
 
-        if (rover.direction === 'N'){
-            console.log('NORTH')
-            rover.y++
+            case 'N':
+                console.log('NORTH')
+                rover.y++
+                rover2.y++
+                break;
 
-        } else if (rover.direction === 'E') {
-            console.log('EAST')
-            rover.x--
+            case 'E':
+                console.log('EAST')
+                rover.x--
+                rover2.x--
+                break;
 
-        } else if (rover.direction === 'S') {
-            console.log('SOUTH')
-            rover.y--
+            case 'S':
+                console.log('SOUTH')
+                rover.y--
+                rover2.y--
+                break;
 
-        } else if (rover.direction === 'W') {
-            console.log('WEST')
-            rover.x++
+            case 'W':
+                console.log('WEST')
+                rover.x++
+                rover2.x++
+                break;
+        }
 
+
+        if (rover.x < 0 || rover.x >= 10) {
+
+            console.log('The rover has gone OUT from the board!!!') 
+
+        } else if (rover.y < 0 || rover.y >= 10) {
+
+            console.log('The rover has gone OUT from the board!!!')
+
+        } else if (rover2.x < 0 || rover2.x >= 10) {
+
+            console.log('The rover2 has gone OUT from the board!!!')
+
+        } else if (rover2.y < 0 || rover2.y >= 10) {
+
+            console.log('The rover2 has gone OUT from the board!!!') 
+            
         }
 
 
         let newPosition = { x: rover.x, y: 
         rover.y}
+
+        let newPosition2 = { x: rover2.x, y: rover2.y}
         
         console.log(`Rover has this new position: ${rover.travelLog.push(newPosition)}`)
 
+        console.log(`Rover 2 has this new position: ${rover2.travelLog.push(newPosition2)}`)
 
-    //Bonus 1 | Enforce boundaries 
-
-    } else {
-        console.log('The rover has gone OUT from the board!!!')
+    
     }
 }
-*/
+
 
 
 //Iteration 4 | Commands
@@ -204,14 +259,10 @@ function commands (command) {
             console.log('Wrong command: You must enter: f, r, l or b')
             break
     }  
-
 }   
-    console.log(rover.travelLog);
+    console.log(rover.travelLog)
+    console.log(rover2.travelLog)
 }
 
-//Iteration 5 | Tracking 
-
-commands('rffrfflfrff')
-
-//////////////////////////////////////////////
-
+//commands('rffrfflfrff')
+commands('lf')
