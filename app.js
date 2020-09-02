@@ -256,5 +256,5 @@ function commands (command) {
     console.log(rover2.travelLog)
 }
 
-//commands('rffrfflfrff')
-commands('lf')
+commands('rffrfflfrff')
+//commands('lf')
